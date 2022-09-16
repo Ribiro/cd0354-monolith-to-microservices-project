@@ -1,19 +1,19 @@
 language: node_js
-node_js: 
+node_js:
   - 13
 
 services:
-  - docker 
+  - docker
 
-# Pre-testing installs 
+# Pre-testing installs
 install:
   - echo "nothing needs to be installed"
 
-# Scripts to be run such as tests 
+# Scripts to be run such as tests
 before_script:
   - echo "no tests"
 
-script: 
+script:
   - docker --version # print the docker version for logging
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed ribiro/udagram-api-feed
@@ -31,5 +31,5 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push ribiro/udagram-api-feed
   - docker push ribiro/udagram-api-user
-  - docker push ribiro/udagram-frontend:local
+  - docker push ribiro/udagram-frontend
   - docker push ribiro/reverseproxy
