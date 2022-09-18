@@ -11,28 +11,28 @@ services:
   backend-user:
     image: udagram-api-user
     environment:
-      POSTGRES_USERNAME: $POSTGRES_USERNAME
-      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_DB: $POSTGRES_DB
-      POSTGRES_HOST: $POSTGRES_HOST
-      AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRES_USERNAME: ribiro
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: ribiro-project3-database.cfa7ulwuxact.us-east-1.rds.amazonaws.com
+      POSTGRES_DB: postgres
+      AWS_BUCKET: ribiro-project3-bucket
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default
+      JWT_SECRET: project3
       URL: "http://localhost:8100"
   backend-feed:
     image: udagram-api-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRES_USERNAME: $POSTGRES_USERNAME
-      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_DB: $POSTGRES_DB
-      POSTGRES_HOST: $POSTGRES_HOST
-      AWS_REGION: $AWS_REGION
-      AWS_PROFILE: $AWS_PROFILE
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRES_USERNAME: ribiro
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: ribiro-project3-database.cfa7ulwuxact.us-east-1.rds.amazonaws.com
+      POSTGRES_DB: postgres
+      AWS_BUCKET: ribiro-project3-bucket
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default
+      JWT_SECRET: project3
       URL: "http://localhost:8100"
   frontend:
     image: udagram-frontend
