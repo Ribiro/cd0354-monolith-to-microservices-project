@@ -13,16 +13,14 @@ spec:
         run: backend-feed
     spec:
       containers:
-        - image: docker.io/ribiro/udagram-api-feed
+        - image: ribiro/udagram-api-feed
           name: backend-feed
           imagePullPolicy: Always
           resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
             limits:
-              memory: "1024Mi"
-              cpu: "500m"
+              cpu: 500m
+            requests:
+              cpu: 200m
           env:
             - name: URL
               valueFrom:
