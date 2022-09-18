@@ -13,12 +13,16 @@ spec:
         run: frontend
     spec:
       containers:
-        - name: frontend
-          image: docker.io/ribiro/udagram-frontend
+        - image: docker.io/ribiro/udagram-frontend
+          name: frontend
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           resources:
-            limits:
-              cpu: 500m
             requests:
-              cpu: 200m
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
+      restartPolicy: Always

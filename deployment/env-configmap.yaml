@@ -3,5 +3,12 @@ kind: ConfigMap
 metadata:
   name: env-config
 data:
-  USER_NAME: YWRtaW4=
-  PASSWORD: MWYyZDFlMmU2N2Rm
+  POSTGRES_USERNAME: ribiro
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_HOST: ribiro-project3-database.cfa7ulwuxact.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  AWS_BUCKET: ribiro-project3-bucket
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  JWT_SECRET: project3
+  URL: http://localhost:8100
